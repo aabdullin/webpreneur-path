@@ -8,7 +8,7 @@ const categories = [
   "All",
   "Freelance Web Development",
   "Paid Adds",
-  "Building websites / Affiliate marketing",
+  "Building & Flipping websites / Affiliate marketing",
   "Buy Online business",
   "SEO",
   "Web Design",
