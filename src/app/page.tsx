@@ -7,7 +7,7 @@ import { cardsData } from "@/card-data";
 const categories = [
   "All",
   "Freelance Web Development",
-  "Paid Adds",
+  "Paid Ads",
   "Building & Flipping websites / Affiliate marketing",
   "Buy Online business",
   "SEO",
@@ -29,7 +29,6 @@ const HomePage: React.FC = () => {
         categories={categories}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
-        
       />
       <CardList cards={filteredCards} />
     </div>

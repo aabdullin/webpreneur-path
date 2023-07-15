@@ -7,9 +7,16 @@ interface CardProps {
   photo: string;
   description: string;
   link: string;
+  pitch: string;
 }
 
-const Card: React.FC<CardProps> = ({ name, photo, description, link }) => {
+const Card: React.FC<CardProps> = ({
+  name,
+  photo,
+  description,
+  pitch,
+  link,
+}) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -22,6 +29,7 @@ const Card: React.FC<CardProps> = ({ name, photo, description, link }) => {
         <>
           <h3 className="card__name">{name}</h3>
           <p className="card__description">{description}</p>
+          <p className="card__description">{pitch}</p>
         </>
       );
     }
@@ -36,7 +44,6 @@ const Card: React.FC<CardProps> = ({ name, photo, description, link }) => {
     <div className="card">
       <div className="card__image">
         <Image
-          // fill={true}
           src={photo}
           alt={name}
           className="card__photo"
