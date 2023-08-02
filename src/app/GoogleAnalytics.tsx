@@ -1,7 +1,12 @@
+/* eslint-disable @next/next/inline-script-id */
 import React from "react";
 import Script from "next/script";
 
-const GoogleAnalytics = ({ trackingId }) => {
+interface GoogleAnalyticsProps {
+  trackingId: string;
+}
+
+const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ trackingId }) => {
   return (
     <>
       <Script
