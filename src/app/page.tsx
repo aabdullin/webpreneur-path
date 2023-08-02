@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import CardList from "../../components/CardList";
 import FilterButtons from "../../components/FilterButtons";
 import { cardsData } from "@/card-data";
-// import '../../styles/global.css';
+import "./../../css/card.css";
 
 const categories = [
   "All",
