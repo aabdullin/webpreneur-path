@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({
         <>
           <h3 className="card__name">{name}</h3>
           <p className="card__description">{description}</p>
-          <p className="card__description">{pitch}</p>
+          <p className="card__pitch">{pitch}</p>
         </>
       );
     }

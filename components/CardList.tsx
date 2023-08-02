@@ -17,7 +17,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
   return (
     <div className="card-list">
       {cards.map((card) => (
-        <Card key={card.name} {...card} />
+        <Card pitch={""} key={card.name} {...card} />
       ))}
     </div>
   );
