@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, ButtonGroup } from "@mui/material";
 
 interface FilterButtonsProps {
   categories: string[];
@@ -12,19 +13,21 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({
   setActiveCategory,
 }) => {
   return (
-    <div className="filter-buttons">
+    <ButtonGroup
+      variant="contained"
+      color="primary"
+      aria-label="filter buttons"
+    >
       {categories.map((category) => (
-        <button
+        <Button
           key={category}
-          className={`filter-buttons__button ${
-            category === activeCategory ? "active" : ""
-          }`}
+          variant={category === activeCategory ? "contained" : "outlined"}
           onClick={() => setActiveCategory(category)}
         >
           {category}
-        </button>
+        </Button>
       ))}
-    </div>
+    </ButtonGroup>
   );
 };
 

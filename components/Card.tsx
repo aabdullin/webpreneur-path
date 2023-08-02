@@ -1,6 +1,13 @@
 import "../css/card.css";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import {
+  Card as MuiCard,
+  CardContent,
+  CardMedia,
+  Typography,
+  Link,
+} from "@mui/material";
 
 interface CardProps {
   name: string;
@@ -27,40 +34,29 @@ const Card: React.FC<CardProps> = ({
     if (isClient) {
       return (
         <>
-          <h3 className="card__name">{name}</h3>
-          <p className="card__description">{description}</p>
-          <p className="card__pitch">{pitch}</p>
+          <Typography variant="h5">{name}</Typography>
+          <Typography variant="body2" color="textSecondary">
+            {description}
+          </Typography>
+          <Typography variant="body2">{pitch}</Typography>
         </>
       );
     }
     return (
-      <>
-        <div className="card__loading">Loading...</div>
-      </>
+      <Typography variant="body2" color="textSecondary">
+        Loading...
+      </Typography>
     );
   };
 
   return (
-    <div className="card">
-      <div className="card__image">
-        <Image
-          src={photo}
-          alt={name}
-          className="card__photo"
-          width={500}
-          height={500}
-        />
-      </div>
-      <div className="card__content">{renderContent()}</div>
-      <a
-        href={link}
-        className="card__link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <MuiCard sx={{ maxWidth: 345 }}>
+      <CardMedia component="img" height="200" image={photo} alt={name} />
+      <CardContent>{renderContent()}</CardContent>
+      <Link href={link} target="_blank" rel="noopener noreferrer">
         Learn More
-      </a>
-    </div>
+      </Link>
+    </MuiCard>
   );
 };
 
