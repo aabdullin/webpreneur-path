@@ -4,6 +4,7 @@ import CardList from "../../components/CardList";
 import FilterButtons from "../../components/FilterButtons";
 import { cardsData } from "@/card-data";
 import "./../../css/card.css";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const categories = [
   "All",
@@ -26,6 +27,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
+      <GoogleAnalytics trackingId="G-WXVY2NJVV2" />
       <FilterButtons
         categories={categories}
         activeCategory={activeCategory}
